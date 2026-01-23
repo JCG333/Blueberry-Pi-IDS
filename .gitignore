@@ -1,0 +1,10 @@
+#ignore actual live config
+suricata.yaml
+
+#ignore all log files 
+*.log 
+*.json
+
+#ignore temp files
+*.swp
+*.tmp 

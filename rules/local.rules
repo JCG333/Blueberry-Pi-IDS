@@ -1,0 +1,6 @@
+#alert tcp $APPLE_TV any -> $EXTERNAL_NET ![443,5223,123,5353] (msg: "AppleTV Potential C2: Unusual Outbound TCP Connection";flow:to_server;classtype:trojan-activity;sid:1000001;rev:1;)
+
+alert udp $HOME_NET any -> any 53 (msg:"DNS-C2: Potential DNS Tunneling (High Frequency)"; content:"|01 00|"; offset:2; depth:2; threshold:type both, track by_src, count 50, seconds 60; classtype:trojan-activity; sid:1000008; rev:1;)
+# == How to test the dns tunneling ==
+# for i in {1..60}; do nslookup "test-$i.tunnel-test.com" > /dev/null 2>&1; done
+# --> this will loops 60 times, asking the Pi-hole for a different subdomain each time
