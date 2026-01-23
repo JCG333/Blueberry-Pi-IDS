@@ -28,7 +28,7 @@ graph TD
     subgraph User Devices
         Router --- Laptop[MBP used to configure and manage homelab]
         Router --- IoT
-        Router --- Other personal devices
+        Router --- Other[Other personal devices]
     end
 
     style Pi fill:#f96,stroke:#333,stroke-width:2px
