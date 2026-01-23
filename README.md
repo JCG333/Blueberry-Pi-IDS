@@ -12,7 +12,7 @@ The IDS is currently configured as a passive DNS monitor. Since the individual d
 - **DNS tunneling:** detecting non-standard dns query load
 
 ## Topology 
-
+```mermaid
 graph TD
     Internet((Internet)) --- Switch[Managed Switch]
     
@@ -34,6 +34,6 @@ graph TD
     style Pi fill:#f96,stroke:#333,stroke-width:2px
     style SSD fill:#bbf,stroke:#333
     style Switch fill:#eee,stroke:#333
-
+```
 ## Disclaimer
 This project is for educational and home-lab purposes only. Signatures are tuned for specific device behavior and may require adjustment for different network environments. 
