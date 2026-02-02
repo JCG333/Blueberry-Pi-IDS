@@ -1,0 +1,8 @@
+[DEFAULT]
+maxretry=3
+bantime=-1
+
+[sshd]
+enabled=true
+banaction=ufw
+ignorecommand=/bin/false

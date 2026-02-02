@@ -1,0 +1,9 @@
+### UFW PERMITTED PORTS ###
+22/tcp          # SSH (Management)
+53/any          # DNS (Pi-hole Service)
+80/tcp          # Pi-hole Web Dashboard
+5636/tcp        # EveBox IDS Dashboard
+
+### DEFAULT POLICY ###
+Incoming: DENY
+Outgoing: ALLOW

@@ -11,6 +11,12 @@ This is a custom Suricata IDS running on a Raspberry Pi 4. This project focuses 
 The IDS is currently configured as a passive DNS monitor. Since the individual devices aren't connected directly to the switch(but through the router). 
 - **DNS tunneling:** detecting non-standard dns query load
 
+## Defensive strategies 
+- **Intrusion Prevention:** Configured **Fail2Ban** with a permanent ban policy for any IP exceeding 3 failed SSH attempts. This aims to
+neutralize brute force attemps.
+- **Stateful Firewall:** Deployed **UFW** with a zero trust policy. Access is strictly limited to DNS, SSH, and the EveBox dashboard.
+- **Automated Patching:** Enabled `unattended-upgrades` to ensure the Pi receives critical security patches automatically.
+
 ## Topology 
 ```mermaid
 graph TD
