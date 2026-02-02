@@ -20,25 +20,20 @@ neutralize brute force attemps.
 ## Topology 
 ```mermaid
 graph TD
-    Internet((Internet)) --- Switch[Managed Switch]
+    Internet((Internet)) --- Router[Home Router]
     
-    subgraph Core Infrastructure
-        Switch --- Pi[Raspberry Pi 4 - IDS]
-        Switch --- Router[Home Router - Port 8]
-    end
-
-    subgraph SSD Storage
+    subgraph Local Wired Network
+        Router --- Switch[Network Switch]
+        Switch --- Pi[Raspberry Pi 4 - DNS/IDS]
         Pi --- SSD[(External SSD)]
     end
 
-    subgraph User Devices
-        Router --- Laptop[MBP used to configure and manage homelab]
-        Router --- IoT
-        Router --- Other[Other personal devices]
+    subgraph Wireless Network
+        Router -.-> WiFi[Home Devices: Phones, Laptops, IoT]
     end
 
     style Pi fill:#f96,stroke:#333,stroke-width:2px
-    style SSD fill:#bbf,stroke:#333
+    style Router fill:#bbf,stroke:#333
     style Switch fill:#eee,stroke:#333
 ```
 ## Disclaimer
